@@ -92,9 +92,9 @@ const App = () => {
                     <label className="flex items-center">
                       <input type="checkbox" className="mr-2" checked={todo.isCompleted} onChange={(e) => handleTodoCompletedToggle(e, todo)} />
                       
-                      <span className={todo.isCompleted ? " text-gray-500" : ""}>{todo.title}</span>
+                      <span className={todo.isCompleted ? "line-through text-gray-500" : ""}>{todo.title}</span>
                     </label>
-                    <button className="px-2 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200" onClick={() => handleTodoDelete(todo)}>Delete</button>
+                    <button className="line-through px-2 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200" onClick={() => handleTodoDelete(todo)}>Delete</button>
                   </div>
                   <div>
                     <textarea className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value={todo.description} onChange={(e) => handleTodoDescriptionChange(e, todo)} />
