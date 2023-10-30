@@ -8,7 +8,7 @@ const App = () => {
   const [newTodoDescription, setNewTodoDescription] = useState('');
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/todos')
+    axios.get('https://mernstacktodo-3lzc.vercel.app/api/todos')
       .then(res => setTodos(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -29,7 +29,7 @@ const App = () => {
     e.preventDefault();
     if (!newTodoTitle) return;
     try {
-      const res = await axios.post('http://127.0.0.1:5000/api/todos', {
+      const res = await axios.post('https://mernstacktodo-3lzc.vercel.app/api/todos', {
         title: newTodoTitle,
         description: newTodoDescription
       });
@@ -52,7 +52,7 @@ const App = () => {
     const index = newTodos.findIndex(t => t._id === todo._id);
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
     try {
-      await axios.put(`http://127.0.0.1:5000/api/todos/${todo._id}`, newTodos[index]);
+      await axios.put(`https://mernstacktodo-3lzc.vercel.app/api/todos/${todo._id}`, newTodos[index]);
       setTodos(newTodos);
     } catch (err) {
       console.error(err);
@@ -61,7 +61,7 @@ const App = () => {
 
   const handleTodoDelete = async (todo) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/api/todos/${todo._id}`);
+      await axios.delete(`https://mernstacktodo-3lzc.vercel.app/api/todos/${todo._id}`);
       const newTodos = todos.filter(t => t._id !== todo._id);
       setTodos(newTodos);
     } catch (err) {
