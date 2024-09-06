@@ -6,7 +6,8 @@ const TodoItem = ({ todo, onDelete, onComplete }) => {
         <li className="mb-4 p-4 border rounded shadow">
             <h3 className="text-lg font-bold">{todo.title}</h3>
             <p className="text-gray-700">{todo.description}</p>
-            <p className="text-gray-600">{new Date(todo.dueDate).toLocaleDateString()} {todo.dueTime}</p>
+            <p className="text-gray-600">
+            <h1>due date</h1>{new Date(todo.dueDate).toLocaleDateString()} {todo.dueTime}</p>
             <button
                 onClick={() => onComplete(todo._id)}
                 disabled={todo.completed}

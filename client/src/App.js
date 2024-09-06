@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import TodoPage from './pages/TodoPage';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import EditTodo from './components/Todo/EditTodo';
 
 const App = () => {
   const { authToken } = useContext(AuthContext);
@@ -19,6 +20,9 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        {authToken &&
+        <Route path="/edit/:id" element={<EditTodo />} />
+        }
       </Routes>
     </Router>
   );

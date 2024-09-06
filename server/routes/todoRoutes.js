@@ -64,16 +64,19 @@ router.put('/:id', authMiddleware, async (req, res) => {
 
 router.delete('/:id', authMiddleware, async (req, res) => {
   const { id } = req.params;
+  console.log(id);
 
   try {
     const todo = await Todo.findById(id);
+    console.log(todo);
     if (!todo) {
       return res.status(404).json({ message: 'To-do not found' });
     }
-
-    await todo.remove();
+    console.log(todo);
+    await todo.deleteOne();
     res.json({ message: 'To-do deleted' });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Error deleting to-do', error });
   }
 });
