@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await login(formData);
-      authLogin(`Bearer ${data.token}`);
+      authLogin(`${data.token}`);
       navigate('/');
     } catch (error) {
       console.error('Error logging in', error);
