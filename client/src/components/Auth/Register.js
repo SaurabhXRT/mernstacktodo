@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await register(formData);
-      authLogin(`Bearer ${data.token}`);
+      authLogin(`${data.token}`);
       navigate('/');
     } catch (error) {
       console.error('Error registering', error);
