@@ -7,6 +7,7 @@ const secretKey = "2809a95eedde5863d8e8e3bea5205cd62d290b10a3769afee677b8754a4d0
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
+  // const username=req.body.username
   const { username, email, password } = req.body;
   
   try {
@@ -18,6 +19,7 @@ router.post('/register', async (req, res) => {
     const user = new User({ username, email, password });
     await user.save();
     const token = jwt.sign({ userId: user._id }, secretKey, { expiresIn: '1h' });
+    // yhi token ja rha hai client ke register.js ke {data } ke pas
     res.json({ token });
     //res.status(201).json({ message: 'User created successfully' });
   } catch (error) {

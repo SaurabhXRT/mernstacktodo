@@ -21,11 +21,12 @@ const Login = () => {
   };
 
   return (
+    // yaha login parent authform jo ki child hai uska usko formdata jo ki use state me uper define hai initially empty aur button text bhej rha hai aur baki ke do propes children se email aur password change hone pe yaha use state of parent me change ho ja rha hai
     <AuthForm
       formData={formData}
       setFormData={setFormData}
       handleSubmit={handleSubmit}
-      buttonText="Login"
+      buttonText="login"
     />
   );
 };

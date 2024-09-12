@@ -15,11 +15,13 @@ const App = () => {
   return (
 
     <Router>
+      {/* here navbar is for todo name which is fixed for every page and below thatrouting in react is applied for different pages  */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        {/* niche edittodo konsecure kiye hai */}
         {authToken &&
         <Route path="/edit/:id" element={<EditTodo />} />
         }
