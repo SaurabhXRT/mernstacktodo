@@ -8,6 +8,7 @@ const AuthForm = ({ formData, setFormData, handleSubmit, buttonText }) => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto p-4 bg-white shadow-md rounded">
+    {/* formdata.username !=undefined tab yeh register page ke liye use hoga */}
       {formData.username !== undefined && (
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>

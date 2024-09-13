@@ -16,6 +16,9 @@ const TodoList = () => {
       console.error('Error fetching to-dos', error);
     }
   };
+// useeffect ka kaaam ghai ki ydi user ke pass phle se todos hai aur woh login hai(ie uske pass auth token hai  ) toh wooh 
+//khud se todos list ko niche dikj=ha de aisa na ho ki jb hm todos create kr rhe ho tbhi dikhaye jo
+// jo existing todos ho woh khud se render hoke dikhe  
 
   useEffect(() => {
     fetchTodos();
@@ -41,6 +44,7 @@ const TodoList = () => {
 
   return (
     <div className="max-w-lg mx-auto p-4">
+    {/* yaha  */}
       <CreateTodo fetchTodos={fetchTodos} />
       <ul className="mt-4">
         {todos.map(todo => (

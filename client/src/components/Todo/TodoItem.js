@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const TodoItem = ({ todo, onDelete, onComplete }) => {
     return (
+        // yeh ui hai added todos ka ki kaise dikega apna todo 
         <li className="mb-4 p-4 border rounded shadow">
             <h3 className="text-lg font-bold">{todo.title}</h3>
             <p className="text-gray-700">{todo.description}</p>

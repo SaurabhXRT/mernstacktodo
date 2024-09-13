@@ -13,6 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await login(formData);
+      // authlogin me token ko save kr rhe hai ferther use ke liye dusre component me
       authLogin(`${data.token}`);
       navigate('/');
     } catch (error) {

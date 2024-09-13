@@ -23,6 +23,7 @@ const App = () => {
         <Route path="/register" element={<Register/>} />
         {/* niche edittodo konsecure kiye hai */}
         {authToken &&
+        /*  yaha hm todoitem se aaye hai link wale route ne hmko bheja hai yaha se ab edit todo jayenge */
         <Route path="/edit/:id" element={<EditTodo />} />
         }
       </Routes>

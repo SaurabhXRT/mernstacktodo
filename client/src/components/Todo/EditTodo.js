@@ -21,7 +21,9 @@ const EditTodo = () => {
                 const { data } = await getTodos(authToken); 
                 const todoToEdit = data.find((todo) => todo._id === id); 
                 if (todoToEdit) {
+                    // yaha se hi jo purana data hai us id ke corresponding woh apne title ,description,duedate ,duetime wale input box me aaajayega
                     setFormData({
+
                         title: todoToEdit.title,
                         description: todoToEdit.description,
                         dueDate: todoToEdit.dueDate.split('T')[0], 
@@ -33,6 +35,7 @@ const EditTodo = () => {
             }
         };
         fetchTodo();
+        // niche wal dependency array hai use effect ke liye
     }, [id, authToken]);
 
     const handleSubmit = async (e) => {

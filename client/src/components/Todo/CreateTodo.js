@@ -10,9 +10,11 @@ const CreateTodo = ({ fetchTodos }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // create todo yaha in sab data jo form data ke andr hai usko backend me bhej rhe hai save krne ke liye with token
       await createTodo(formData, authToken);
       setFormData({ title: '', description: '', dueDate: '', dueTime: '' });
-      fetchTodos();
+      // fetch yeh sab data ko backend se fe me la ke todos me store kr de rha hai josko map krke apn sjhow kr rhe hai ui me jo ki todolist  ke andr define hai
+       await fetchTodos();
     } catch (error) {
       console.error('Error creating to-do', error);
     }
